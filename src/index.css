@@ -10,7 +10,7 @@ body {
   font-size: 16px;
 }
 
-/***Text utilities***/
+/***Color utilities***/
 .text__dark_grey{
   color:#323639;
 }
@@ -38,7 +38,7 @@ body {
   font-size: 20px;
 }
 .font--24px{
-  font-size: 20px;
+  font-size: 24px;
 }
 .font--40px{
   font-size: 40px;
@@ -68,17 +68,32 @@ body {
 }
 
 /****Component specific Styles****/
+
 .app__container{
   max-width: 1200px;
   border: 1px solid #dddddd;
   box-shadow: 0px 0px 8px #aaaaaa;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   margin: auto;
+}
+header{
+  padding: 1rem;
+  background: #ec6e4c;
+  margin: 0rem -1rem 2rem;
+  color: #fff;
+  font-size: 24px;
+
 }
 .infocard__header{
   margin: 0px;
   font-size: 40px;
   font-weight: 300;
+}
+.infocard__active{
+  color: #ec6e4c;
+}
+.cursor{
+  cursor:pointer;
 }
 .forecastcard__tile{
   text-align: center;

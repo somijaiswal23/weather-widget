@@ -1,14 +1,20 @@
 import moment from 'moment'
-const WeatherInfoCard = ({name, dt, desc, icon, temp, clouds, humidity, wind}) =>{
+const IMPERIAL = 'imperial'
+const METRIC = 'metric'
+const WeatherInfoCard = ({name, dt, desc, icon, temp, clouds, humidity, wind, unit, unitHandler}) =>{
     const dateTime = moment(dt * 1000).format('dddd, MMMM Do')
     return(<section className="margin__bottom-2rem" aria-labelledby="widgetTitle" aria-describedby="widgetDesc">
         <h1 id="widgetTitle" className="infocard__header text__dark_grey">{name}</h1>
-        <div className="font--14px text__light_grey">{dateTime}</div>
-        <div className="font--14px text__light_grey">{desc}</div>
+        <div className="font--14px text__light_grey" title={dateTime}>{dateTime}</div>
+        <div className="font--14px text__light_grey" title={desc}>{desc}</div>
         <div className="d-flex">
             <div className="d-flex">
                 <img src={`${process.env.REACT_APP_ICON_URL}/${icon}@2x.png`} alt={desc}/>
-                <div className="font--40px text__dark_grey"> {Math.round(temp)} <sup className="font--24px">°C</sup></div>
+                <div className="font--40px text__dark_grey"> {Math.round(temp)} 
+                    <sup onClick={()=>unitHandler(METRIC)}className={`font--24px cursor ${unit === 'metric' && 'infocard__active'}`} role="link">°C</sup> 
+                    <sup>|</sup> 
+                    <sup  onClick={()=>unitHandler(IMPERIAL)} role="link" className={`font--24px cursor ${unit !== 'metric' && 'infocard__active'}`}>°F</sup>
+                </div>
             </div>
             <div className="font--14px margin__auto text__light_grey">
                 <div><strong className="text__dark_grey">Clouds: </strong>{clouds}% </div>
@@ -20,13 +26,4 @@ const WeatherInfoCard = ({name, dt, desc, icon, temp, clouds, humidity, wind}) =
     </section>)
 }
 
-// clouds: 75
-// desc: "broken clouds"
-// dt: 1622972916
-// humidity: 86
-// icon: "04n"
-// temp_max: 13.4
-// temp_min: 10.7
-// wind: 3.13
-// name:'Melbourne'
 export default WeatherInfoCard

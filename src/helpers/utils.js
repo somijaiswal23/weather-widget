@@ -29,7 +29,7 @@ export const transformCurrentData = (data)=>{
       }
 }
 
-/***Transform forcast Location Data***/
+/***Transform forecast Location Data***/
 
 export const transformForecastData = (data)=>{
     if(!data) return null
