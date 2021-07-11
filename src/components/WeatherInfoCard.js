@@ -1,4 +1,6 @@
-import moment from 'moment'
+import moment from 'moment';
+import React from 'react';
+
 const IMPERIAL = 'imperial'
 const METRIC = 'metric'
 const WeatherInfoCard = ({name, dt, desc, icon, temp, clouds, humidity, wind, unit, unitHandler}) =>{

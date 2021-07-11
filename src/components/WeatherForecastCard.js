@@ -1,4 +1,5 @@
-import moment from 'moment'
+import moment from 'moment';
+import React from 'react';
 
 /***This component create the tile for each day ***/
 const WeatherTile = (props) =>{

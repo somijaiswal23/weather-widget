@@ -1,5 +1,5 @@
 
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import FadeLoader from "react-spinners/FadeLoader";
 
 /**Component Imports ***/
@@ -33,7 +33,7 @@ const App=()=> {
       });
     }
     fetchData()
-  }, [])
+  })
 
   /***Method to fetch the current location data based on lat long or city */
   const fetchCurrentData = async ({latitude, longitude, city, unit='metric'}) =>{
@@ -41,7 +41,7 @@ const App=()=> {
     const url = city ? 
     `${process.env.REACT_APP_API_URL}/weather?q=${city}&units=${unit}&APPID=${process.env.REACT_APP_API_KEY}`:
     `${process.env.REACT_APP_API_URL}/weather?lat=${latitude}&lon=${longitude}&units=${unit}&APPID=${process.env.REACT_APP_API_KEY}`
-   
+
     try {
       const {data} = await httpRequest({url})
       setCurrentData(transformCurrentData(data))

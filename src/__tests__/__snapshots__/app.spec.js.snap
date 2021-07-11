@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App renders correctly 1`] = `
+<div
+  className="loading"
+>
+  <span
+    className="css-kud8pv"
+  >
+    <span
+      className="css-13zvdqj"
+    />
+    <span
+      className="css-1pvweis"
+    />
+    <span
+      className="css-1ojqvir"
+    />
+    <span
+      className="css-cp4k8y"
+    />
+    <span
+      className="css-186jc3w"
+    />
+    <span
+      className="css-1pedn1l"
+    />
+    <span
+      className="css-1isfyzl"
+    />
+    <span
+      className="css-1gsc65l"
+    />
+  </span>
+</div>
+`;

@@ -1,3 +1,4 @@
+import React from 'react';
 import WeatherInfoCard from "./WeatherInfoCard"
 import WeatherForecastCard from "./WeatherForecastCard"
 const WeatherWidget = ({currentData, forecastData, unit, unitHandler}) =>{
